@@ -1,0 +1,47 @@
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu a::after {
+        transform: rotate(-90deg);
+        position: absolute;
+        right: 6px;
+        top: 1.25em;
+}
+
+.dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-left: .1rem;
+        margin-right: .1rem;
+}
+
+@media only screen and (max-width: 575px){
+        .header-media{
+                display: flex;
+                justify-content: center;
+        }
+
+        .header-user-button{
+                text-align: center !important;
+        }
+}
+
+@media only screen and (max-width: 1199px){
+        .header-media-float{
+                float: left !important;
+        }
+}
+
+@media only screen and (min-width: 1200px){
+        .header-media{
+                display: flex;
+                justify-content: center;
+                width: 100% !important;
+        }
+
+        .header-user{
+                position: absolute !important;
+                right: 0;
+        }
+}

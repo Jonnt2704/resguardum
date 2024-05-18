@@ -1,0 +1,13 @@
+.fa-angle-right {
+    transform: scale(1.6);
+    margin-left: 8px;
+    margin-top: -4px;
+}
+
+button[aria-expanded='false'] > .fa-sm-x2 > .fa-angle-right {
+    transform: scale(1.6) rotate(0deg);
+}
+
+button[aria-expanded='true'] > .fa-sm-x2 > .fa-angle-right {
+    transform: scale(1.6) rotate(-90deg);
+}
