@@ -16,3 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/admin', function () {
+    return view('admin.index');
+});
+
+Route::get('/admin/subline/index', function () {
+    return view('admin.subline.index');
+});
+
+Route::get('/admin/subline/index', [App\Http\Controllers\sublineTopicController::class, 'index'])->name('index');
+
+Route::get('/admin/subline/add', [App\Http\Controllers\sublineTopicController::class, 'list'])->name('list');
+
