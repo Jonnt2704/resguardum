@@ -16,7 +16,10 @@ class DatabaseSeeder extends Seeder
          $this->call(typeSeeder::class);
          $this->call(sublineSeeder::class);
          $this->call(subline_topicSeeder::class);
+<<<<<<< HEAD
     
+=======
+>>>>>>> 6a68d8b39a244f338ee21e48eeadb6b5b739a18e
     }
     
 }
