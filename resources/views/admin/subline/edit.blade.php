@@ -4,13 +4,13 @@
 
 @section('subtitle', 'Welcome')
 @section('content_header_title', 'Sub-Linea')
-@section('content_header_subtitle', 'Agregar Sub-Linea')
+@section('content_header_subtitle', 'Editar Sub-Linea')
 
 
 {{-- Content body: main page content --}}
 
 @section('content_body')
-    <p>Complete el formulario para agregar una nueva sub linea de investigacion</p>
+    <p>Complete el formulario para editar la sub linea de investigacion</p>
     <div class="row">
         <div class="col-12">
             <div class="card card-primary">
@@ -18,29 +18,29 @@
                     <h3 class="card-title">Datos de la Linea de Investigacion</h3>
                 </div>
 
-                <form id="addSubLine-topic" method="POST">
+                <form id="editSubLine-topic" method="POST">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
                             <label for="InputSubLineName">Nombre</label>
-                            <input type="text" class="form-control col-6" name="subLineName" id="InputSubLineName" placeholder="Nombre de la Linea. Ej: Aplicaciones Web">
+                            <input type="text" class="form-control col-6" name="subLineName" id="InputSubLineName" placeholder="Nombre de la Linea. Ej: Aplicaciones Web" value="{{ $subline_topic[0]->name }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Linea</label>
                             <select class="custom-select rounded-0" name="selectLine" id="SelectSubLine">
                                 <option>Seleccione una Opcion</option>   
                                 @foreach ($allLines as $line)
-                                    <option value="{{ $line->id }}">{{ $line->name }}</option>   
+                                    <option @php echo $subline_topic[0]->subline==$line->id?'selected':''; @endphp value="{{ $line->id }}">{{ $line->name }}</option>   
                                 @endforeach         
                             </select>
                         </div>
 
                     </div>
-
+                    <input type="hidden" name="subLineId" id="subLineId" value="{{ $subline_topic[0]->id }}">
                     </div>
 
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-success">Agregar</button>
+                        <button type="submit" class="btn btn-success">Confirmar</button>
                     </div>
                 </form>
             </div> 
@@ -60,14 +60,15 @@
 @push('js')
     <script>
 
-        $('#addSubLine-topic').on('submit', function(event) {
+        $('#editSubLine-topic').on('submit', function(event) {
 
             event.preventDefault();
 
+            var Id = $('#subLineId').val();
             let formData = new FormData(this);
 
             $.ajax({
-                url: "{{ url('/admin/create-subline-topic') }}",
+                url: "{{ url('/admin/update-subline-topic') }}" + "/" + Id,
                 type: "POST",
                 data: formData,
                 contentType: false,
@@ -78,7 +79,7 @@
                         alert(response.Message);
                     } else if (response.isSuccess == true) {
 
-                        Swal.fire("Registrado", "Sub Linea de Investigacion agregada con exito.", "success");
+                        Swal.fire("Actualizado", "Se ha editado la Sub Linea de Investigacion.", "success");
 
                         setTimeout(function() {
                             window.location.reload();

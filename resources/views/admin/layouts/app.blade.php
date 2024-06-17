@@ -47,6 +47,9 @@
 {{-- Add common Javascript/Jquery code --}}
 
 @push('js')
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.1/dist/sweetalert2.all.min.js"></script>
+
 <script>
 
     $(document).ready(function() {
@@ -59,6 +62,9 @@
 {{-- Add common CSS customizations --}}
 
 @push('css')
+
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.1/dist/sweetalert2.min.css" rel="stylesheet">
+
 <style type="text/css">
 
     {{-- You can add AdminLTE customizations here --}}

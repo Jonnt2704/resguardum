@@ -221,7 +221,7 @@
                 <div class="content">
         <!-- Main Banner -->
         <div class="banner-main">
-            <img src="" width="100%">
+            <img src="{{asset('assets/img/banner_resguardum.jpg')}}" width="100%">
         </div>
         <!-- /.main-banner -->
 

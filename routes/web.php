@@ -27,6 +27,12 @@ Route::get('/admin/subline/index', function () {
 });
 
 Route::get('/admin/subline/index', [App\Http\Controllers\sublineTopicController::class, 'index'])->name('index');
-
 Route::get('/admin/subline/add', [App\Http\Controllers\sublineTopicController::class, 'list'])->name('list');
+Route::post('/admin/create-subline-topic', [App\Http\Controllers\sublineTopicController::class, 'store']);
+Route::get('/admin/subline/edit/{id}', [App\Http\Controllers\sublineTopicController::class, 'edit']);
+Route::post('/admin/update-subline-topic/{id}', [App\Http\Controllers\sublineTopicController::class, 'update']);
+Route::get('/admin/deleteSubLine-topic/{id}', [App\Http\Controllers\sublineTopicController::class, 'destroy']);
+
+
+
 

@@ -25,6 +25,7 @@
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Linea</th>
                                     <th scope="col">Acciones</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -32,10 +33,10 @@
                                 <tr>
                                     <th scope="row">{{ $sLines->id }}</th>
                                     <td>{{ $sLines->name }}</td>
-                                    <td>{{ $sLines->subline }}</td>
+                                    <td>{{ $sLines->sName }}</td>
                                     <td>
-                                        <a href="#"  class="btn btn-info  btn-sm"><i class="fa fa-edit"></i></a>
-                                        <a href="#" class="btn btn-danger  btn-sm"><i class="fa fa-trash"></i></a>  
+                                        <a href="/admin/subline/edit/{{ $sLines->id }}"  class="btn btn-info  btn-sm"><i class="fa fa-edit"></i></a>
+                                        <a data-id="{{ $sLines->id }}" class="btn btn-danger btn-sm delConfirmButton"><i class="fa fa-trash"></i></a>  
                                     </td>
                                 </tr>
                                 @endforeach 
@@ -58,5 +59,57 @@
 {{-- Push extra scripts --}}
 
 @push('js')
-    <script> console.log("Hi, I'm using the Laravel-AdminLTE package!"); </script>
+    <script> 
+
+        $('.delConfirmButton').click(function (event) {
+
+          event.preventDefault();
+          var ID = $(this).attr('data-id');
+ 
+
+          Swal.fire({
+            title: "¿Desea borrar este elemento?",
+            text: "No podra deshacer esta accion",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#2d5c88",
+            cancelButtonColor: "#f46a6a",
+            confirmButtonText: "Si",
+            cancelButtonText: "Cancelar"
+          }).then(function (result) {
+
+            if (result.value) {
+
+                $.ajax({
+                    url: "{{ url('/admin/deleteSubLine-topic') }}" + "/" + ID,
+                    type: "GET",
+                    success: function(response) {
+
+                        if (response.isSuccess == false) {
+                            alert(response.Message);
+                        } else if (response.isSuccess == true) {
+
+                            Swal.fire("Borrado", "Se ha Borrado el elemento.", "success");
+
+                            setTimeout(function() {
+                                window.location.reload();
+                            }, 1000);
+
+                        }
+
+                    },
+                    error: function(response) {
+                        
+                        Swal.fire("Ha ocurrido un error", response.message, "error");
+
+                    }
+                });
+                
+            }
+
+          });
+
+        }); //Parameter
+
+    </script>
 @endpush
