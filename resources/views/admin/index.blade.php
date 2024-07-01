@@ -3,13 +3,13 @@
 {{-- Customize layout sections --}}
 
 @section('subtitle', 'Welcome')
-@section('content_header_title', 'Home')
-@section('content_header_subtitle', 'Welcome')
+@section('content_header_title', 'Inicio')
+@section('content_header_subtitle', 'Bienvenido')
 
 {{-- Content body: main page content --}}
 
 @section('content_body')
-    <p>Welcome to this beautiful admin panel.</p>
+    <p>Bienvenido al Panel de Administracion del Repositorio de la Universidad de Margarita.</p>
 @stop
 
 {{-- Push extra CSS --}}

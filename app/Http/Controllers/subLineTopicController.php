@@ -19,7 +19,7 @@ class subLineTopicController extends Controller
                 ->select('subline_topic.*', 'subline.name as sName')
                 ->get();
 
-        return view('admin.subline.index', compact('allSlines'));
+        return view('admin.subline-topic.index', compact('allSlines'));
 
     }
 
@@ -51,7 +51,7 @@ class subLineTopicController extends Controller
 
             return response()->json([
                 'isSuccess' => true,
-                'Message' => "Linea creada con exito!"
+                'Message' => "Tema creado con exito!"
             ], 200); // Status code here
 
         } else {
@@ -86,7 +86,7 @@ class subLineTopicController extends Controller
     {
         $allLines = DB::table('subline')->get();
 
-        return view('admin.subline.add', compact('allLines'));  
+        return view('admin.subline-topic.add', compact('allLines'));  
     }
 
     /**
@@ -104,7 +104,7 @@ class subLineTopicController extends Controller
 
         $allLines = DB::table('subline')->get();
 
-        return view('admin.subline.edit', compact('subline_topic', 'allLines'));  
+        return view('admin.subline-topic.edit', compact('subline_topic', 'allLines'));  
 
     }
 
@@ -129,7 +129,7 @@ class subLineTopicController extends Controller
 
             return response()->json([
                 'isSuccess' => true,
-                'Message' => "Linea actualizada con exito!"
+                'Message' => "Tema actualizado con exito!"
             ], 200); // Status code here
 
         } else {

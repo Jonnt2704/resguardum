@@ -28,6 +28,12 @@
         <link rel="stylesheet" href="https://portalunimar.unimar.edu.ve/css/fix.css">
         <link rel="stylesheet" href="https://portalunimar.unimar.edu.ve/css/portalunimar/header.css">
         <link rel="stylesheet" href="https://portalunimar.unimar.edu.ve/css/portalunimar/footer.css">
+
+        <!-- RESGUARDUM Styles -->
+        <link rel="stylesheet" href="{{asset('css/resguardumStyles.css')}}">
+
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
         <!-- Page Styles -->
                 <!-- MDB -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet"/>
@@ -40,6 +46,9 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+        
+
     </head>
     <body>
         <!-- Header -->
@@ -217,8 +226,8 @@
         <!-- /.header -->
 
         <!-- Content Page -->
-        <main class="py-main">
-                <div class="content">
+<main class="py-main">
+    <div class="content">
         <!-- Main Banner -->
         <div class="banner-main">
             <img src="{{asset('assets/img/banner_resguardum.jpg')}}" width="100%">
@@ -231,255 +240,120 @@
                 <img id="img-section" src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-02.png"><h4>ResguardUM (Repositorio Unimarista)</h4>
             </div>
             <div class="card border-0 card-body sectionbody">
-                <p class="text-justify"> La Universidad de Margarita ofrece una formación integral, ciudadana, ética y profesional de recursos humanos que respondan satisfactoriamente a los retos que demanda el desarrollo insular y nacional, mediante las funciones de docencia, investigación, extensión y producción.</p>
+                <p class="text-justify"> Este espacio está diseñado para ser una plataforma centralizada para el almacenamiento, acceso y gestión de los trabajos de grado realizados por los estudiantes de nuestra institución.</p>
+            </div>
+            <div class="d-inline-flex justify-content-around m-4 content-vext">
+                <div class="row justify-content-around">
+                        
+                    <div class="card text-center" style="width: 18rem;">
+                      <div class="card-body">
+                        <a href="/main">
+                            <h5 class="bigTitle">{{ $projectNumber }}</h5>
+                            <p class="card-text fs-6">Trabajos de Grado.</p>
+                        </a>
+                      </div>
+                    </div>
+
+                </div>
             </div>
         </div>
         <!-- /.section-id -->
+
+        <div class="section-content" style="15px auto">
+            <div class="d-flex justify-content-start">
+                <img id="img-section" src="https://portalunimar.unimar.edu.ve/image/views/es/home/home-05.png" width="100%"><h4>Descubre</h4>
+            </div>
+        </div>
 
         <!-- Dropdown Buttons -->
         <div class="d-inline-flex justify-content-around m-4 content-vext">
             <div class="row justify-content-around">
                 <!-- Undergraduate -->
-                <div class="col-md-3 col-sm-3 my-2" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">
-                    <a id="campusbtn">
-                        <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-03.png" width="80%">
+                <div class="col-md-4 col-sm-4 my-2" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">
+                    <a class="campusbtn">
+                        <img src="{{asset('assets/img/Biblio-08_x.jpg')}}" style="border-radius: 20px;" width="80%">
                     </a>
                 </div>
                 <!-- Postgraduate -->
-                <div class="col-md-3 col-sm-3 my-2" data-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapse2">
-                    <a id="campusbtn">
-                        <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-04.png" width="80%">
+                <div class="col-md-4 col-sm-4 my-2" data-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapse2">
+                    <a class="campusbtn" href="/main">
+                        <img src="{{asset('assets/img/Biblio-04_x.jpg')}}" style="border-radius: 20px;" width="80%">
                     </a>
                 </div>
                 <!-- Certified -->
-                <div class="col-md-3 col-sm-3 my-2" data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapse3">
-                    <a id="campusbtn">
-                        <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-05.png" width="80%">
+                <div class="col-md-4 col-sm-4 my-2" data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapse3">
+                    <a class="campusbtn" href="/project-per-year">
+                        <img src="{{asset('assets/img/Biblio-09_x.jpg')}}" style="border-radius: 20px;" width="80%">
                     </a>
                 </div>
                 <!-- Courses -->
-                <div class="col-md-3 col-sm-3 my-2" data-toggle="collapse" href="#collapse4" role="button" aria-expanded="false" aria-controls="collapse4">
-                    <a id="campusbtn">
-                        <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-06.png" width="80%">
-                    </a>
+            </div>
+        </div>
+
+        <div class="section-content" style="15px auto">
+            <div class="d-flex justify-content-start">
+                <img id="img-section" src="https://portalunimar.unimar.edu.ve/image/views/es/home/home-03.png" width="100%"><h4>Agregados Recientemente</h4>
+            </div>
+        </div>
+
+        <div class="section-content m-4 content-vext">
+            <div class="container">
+                <div class="project-carrousel">
+                        @foreach ($projectInfo as $project)
+                        @php
+
+                        $fecha = strtotime($project->create_date);
+                        $year = strftime("%Y", $fecha);
+
+                        @endphp
+                        <div class="my-2 px-5" >
+                            <div class="card" style="width: 18rem;">
+                              <img src="{{asset('assets/img/Biblio-06.jpg')}}" style="background-color: #e8e8e8;" class="card-img-top" alt="...">
+                              <div class="card-body">
+                                <a class="text-dark text-decoration-none" href="/single/project/{{ $project->id }}"><p class="card-text text-capitalize" style="max-height: 110px; overflow: hidden;">{{ $project->title }}</p></a>
+                              </div>
+                              <div class="card-footer">
+                                <small class="text-muted fst-italic">{{ $project->name }} {{ $project->lastname }}</small> <small class="text-muted">(UNIMAR, @php echo $year; @endphp)</small>
+                              </div>
+                            </div>
+                        </div>
+                        @endforeach
+                        
                 </div>
             </div>
         </div>
-        <!-- /.dropdown-buttons -->
-
-        <!-- dropdowns -->
-        <div class="d-flex justify-content-around flex-column" id="contevext">
-            <!-- Undergraduate -->
-            <div class="collapse m-4" id="collapse1">
-                <div class="card border-0 card-body">
-                    <p class="text-justify fw-bold fs-4" id="name-funders">
-                        Ofertas de Pregrado
-                    </p>
-                    <div class="row justify-content-around">
-    <div class="col-md-3 col-sm-3 my-2 border-0">
-        <a id="link-subsystem" href="https://portalunimar.unimar.edu.ve/career/engineering/systems_engineering">
-            <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-07.png" width="65%">
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-3 my-2 border-0">
-        <a id="link-subsystem" href="https://portalunimar.unimar.edu.ve/career/humarte/graphic_design">
-            <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-08.png" width="65%">
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-3 my-2 border-0">
-        <a id="link-subsystem" href="https://portalunimar.unimar.edu.ve/career/humarte/modern_languages">
-            <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-09.png" width="65%">
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-3 my-2 border-0">
-        <a id="link-subsystem" href="https://portalunimar.unimar.edu.ve/career/humarte/integral_education">
-            <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-25.png" width="65%">
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-3 my-2 border-0">
-        <a id="link-subsystem" href="https://portalunimar.unimar.edu.ve/career/ceys/administration">
-            <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-10.png" width="65%">
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-3 my-2 border-0">
-        <a id="link-subsystem" href="https://portalunimar.unimar.edu.ve/career/ceys/public_accounting">
-            <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-11.png" width="65%">
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-3 my-2 border-0">
-        <a id="link-subsystem" href="https://portalunimar.unimar.edu.ve/career/cjyp/law">
-            <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-12.png" width="65%">
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-3 my-2 border-0"> 
-        <a id="link-subsystem" href="https://portalunimar.unimar.edu.ve/career/social-comunication/social_comunication">
-            <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-21.png" width="65%">
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-3 my-2 border-0">
-        <a id="link-subsystem" href="https://portalunimar.unimar.edu.ve/career/psychology/psychology_mention_social_intervention">
-            <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-23.png" width="65%">
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-3 my-2 border-0">
-        <a id="link-subsystem" href="https://portalunimar.unimar.edu.ve/career/humarte/modern_languages_tourism_mention">
-            <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-24.png" width="65%">
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-3 my-2 border-0">
-        <a id="link-subsystem" href="https://portalunimar.unimar.edu.ve/career/ceys/administration_mention_csf">
-            <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-22.png" width="65%">
-        </a>
-    </div>
-</div>                </div>
+        
+        <div class="section-content">
+            <div class="d-flex justify-content-start">
+                <img id="img-section" src="https://portalunimar.unimar.edu.ve/./image/views/es/investigation/Inv-06.png">
+                <h4>Consulta con la IA</h4>
             </div>
-            <!-- /.undergraduate -->
-
-            <!-- Postgraduate -->
-            <div class="collapse m-4" id="collapse2">
-                <div class="card border-0 card-body">
-                    <p class="text-justify fw-bold fs-4" id="name-funders">
-                        Ofertas de Postgrado
-                    </p>
-                    <!-- Academic Offers Dropdown Buttons -->
-<div class="d-flex justify-content-around m-4 content-vext">
-    <div class="row justify-content-around">
-        <!-- Major -->
-        <div class="col-sm-3 col-md-3 my-2" data-toggle="collapse" href="#collapse6" role="button" aria-expanded="false" aria-controls="collapse6">
-            <a id="foundbtn">
-                <img src="https://portalunimar.unimar.edu.ve/./image/views/es/postgraduate/Post-07.png" width="80%">
-            </a>
-        </div>
-        <!-- Master -->
-        <div class="col-sm-3 col-md-3 my-2" data-toggle="collapse" href="#collapse5" role="button" aria-expanded="false" aria-controls="collapse5">
-            <a id="foundbtn">
-                <img src="https://portalunimar.unimar.edu.ve/./image/views/es/postgraduate/Post-08.png" width="80%">
-            </a>
-        </div>
-        <!-- Doctorate -->
-        <div class="col-sm-3 col-md-3 my-2" data-toggle="collapse" href="#collapse4" role="button" aria-expanded="false" aria-controls="collapse4">
-            <a id="campusbtn">
-                <img src="https://portalunimar.unimar.edu.ve/./image/views/es/postgraduate/Post-06.png" width="80%">
-            </a>
-        </div>
-    </div>
-</div>
-<!-- /.academic-offers-dropdown-buttons -->
-
-<!-- Dropdowns -->
-<div class="d-flex justify-content-around flex-column m-4" id="contevext">
-    <!-- Major -->
-    <div class="collapse mx-4" id="collapse6">
-        <div class="card border-0 card-body text-justify">
-            <p  class="card-text font-weight-bold" id="name-funders" style="font-size: 1.25rem; font-weight: 600;">
-                Especializaciones
-            </p>
-            <ul>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/major/finance-major"> Finanzas</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/major/information-management">Gerencia de la Información</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/major/health-care-services">Gerencia de Servicios Asistenciales en Salud</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/major/service-management">Gerencia de Servicios</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/major/educational-management">Gerencia Educativa</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/major/tax-management">Gerencia Tributaria</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/major/occupational-health">Salud Ocupacional</a></li>
-            </ul>
-        </div>
-    </div>
-    <!-- /.major -->
-
-    <!-- Master -->
-    <div class="collapse mx-4" id="collapse5">
-        <div class="card border-0 card-body text-justify">
-            <p  class="card-text font-weight-bold" id="name-funders" style="font-size: 1.25rem; font-weight: 600;">
-                Maestrías
-            </p>
-            <ul>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/master/forensic-audit">Auditoría Forense</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/master/environmental-sciences">Ciencias Ambientales</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/master/criminal-procedural-law">Derecho Procesal Penal</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/master/special-education-teaching">Educación con Mención en Enseñanza de la Educación Especial</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/master/social-sciences-teaching">Educación con Mención en Enseñanza en las Ciencias Sociales</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/master/mathematics-teaching">Educación con Mención en Enseñanza de las Matemáticas</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/master/spanish-teaching">Educación con Mención en Enseñanza del Castellano</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/master/natural-sciences-teaching">Educación con Mención en Enseñanza de las Ciencias Naturales</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/master/custom-management">Gerencia de Aduanas</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/master/works-management-department">Gerencia de Gestión de Obras</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/master/elderly-care">Gerontología y Atención a la Tercera Edad</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/master/regional-history-venezuela">Historia Regional de Venezuela</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/master/spanish-foreign-languaje">Lingüística del Español como Lengua Extranjera</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/master/multimedia-journalism">Periodismo Multimedios</a></li>
-            </ul>
-        </div>
-    </div>
-    <!-- /.master --> 
-
-    <!-- Doctorate -->
-    <div class="collapse mx-4" id="collapse4">
-        <div class="card border-0 card-body text-justify">
-            <p  class="card-text font-weight-bold" id="name-funders" style="font-size: 1.25rem; font-weight: 600;">
-                Doctorados
-            </p>
-            <ul>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/doctorate/administrative-sciences">Ciencias Administrativas</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/doctorate/educational-sciences">Ciencias de la Educación</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/doctorate/criminal-forensic-sciences">Ciencias Penales y Criminalísticas</a></li>
-                <li><a href="https://portalunimar.unimar.edu.ve/postgraduate/doctorate/international-business">Negocios Internacionales</a></li>
-            </ul>
-        </div>
-    </div>
-    <!-- /.doctorate -->
-</div>
-<!-- /.dropdowns -->                </div>
+            <div class="card border-0 card-body sectionbody">
+                <p class="text-justify"> Usa la tecnologia de la IA (Inteligencia Artificial) para obtener ayuda para la propuesta de Titulo de tu tesis de grado. Con esta herramienta podras darle los parametros e ideas de tu proyecto y ella te ayudara a generar una propuesta de titulo para tu proyecto.</p>
             </div>
-            <!-- /.postgraduate -->
-
-            <!-- Certified -->
-            <div class="collapse m-4" id="collapse3">
-                <div class="card border-0 card-body">
-                    <p class="text-justify fw-bold fs-4" id="name-funders">
-                        Diplomados
-                    </p>
-                    <div class="row justify-content-around">
-                        <div class="col-md-3 col-sm-3 my-2 border-0">
-                            <a id="link-subsystem" href="https://portalunimar.unimar.edu.ve">
-                                <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-17.png" width="65%">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /.certified -->
-
-            <!-- Courses -->
-            <div class="collapse m-4" id="collapse4">
-                <div class="card border-0 card-body">
-                    <p class="text-justify fw-bold fs-4" id="name-funders">
-                        Cursos y Talleres
-                    </p>
-                    <div class="row justify-content-around">
-                        <div class="col-md-3 col-sm-3 my-2 border-0">
-                            <a id="link-subsystem" href="https://portalunimar.unimar.edu.ve">
-                                <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-18.png" width="65%">
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-sm-3 my-2 border-0">
-                            <a id="link-subsystem" href="https://portalunimar.unimar.edu.ve">
-                                <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-19.png" width="65%">
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-sm-3 my-2 border-0">
-                            <a id="link-subsystem" href="https://portalunimar.unimar.edu.ve">
-                                <img src="https://portalunimar.unimar.edu.ve/./image/views/es/academic-offers/OfAc-20.png" width="65%">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /.courses -->
         </div>
-        <!-- /.dropdowns -->
+
+        <div class="d-inline-flex justify-content-around m-4 content-vext mb-5">
+            <div class="row justify-content-around">
+                <div class="col-md-12 my-2" style="padding: 0;">
+                        <div class="row no-gutters bg-greey" style="height:100%;">
+                            <div class="col-md-4 text-white content-date" style="border-radius:0px;">
+                                <img src="{{asset('assets/img/Biblio-07_1.jpg')}}" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body" id="card-content">
+                                    <h5 class="card-title font-weight-bold text-left mx-2">Consulta con la IA</h5>
+                                    <p class="card-text text-justify mx-2" style="width: 80%;">Genera una propuesta de titulo para tu tesis de grado con ayuda de la IA</p>
+                                    <a href="/query-ia" class="btn btn-sm btn-primary">Probar Ahora</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+            </div>
+        </div>
+        
     </div>
-        </main>
+</main>
         <!-- /.content-page -->
 
         <!-- Footer -->
@@ -845,6 +719,26 @@
         <!-- /.footer -->
 
         <!-- Page Scripts -->
+        <!-- RESGUARDUM SCRIPT -->
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+        
+
+        <script type="text/javascript">
+            
+            $('.project-carrousel').slick({
+              infinite: true,
+              slidesToShow: 3,
+              autoplay: true,
+              arrows: false,
+              slidesToScroll: 1
+          });
+
+        </script>
+        
             </body>
 </html>
 

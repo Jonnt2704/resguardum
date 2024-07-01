@@ -3,49 +3,54 @@
 {{-- Customize layout sections --}}
 
 @section('subtitle', 'Welcome')
-@section('content_header_title', 'Sub-Linea')
-@section('content_header_subtitle', 'Editar Sub-Linea')
 
 
 {{-- Content body: main page content --}}
 
 @section('content_body')
-    <p>Complete el formulario para editar la sub linea de investigacion</p>
+<div class="p-4">
+    
+    <div class="h3 mb-0 text-gray-dark"><h3>Editar Sub Linea de Investigación</h3></div>
+    <p>Complete el formulario para cambiar la sub linea de investigacion</p>
     <div class="row">
         <div class="col-12">
-            <div class="card card-primary">
+            <div class="card mb-4">
                 <div class="card-header">
-                    <h3 class="card-title">Datos de la Linea de Investigacion</h3>
+                    <h3 class="card-title">Datos del La Sub Linea de Investigacion</h3>
                 </div>
 
-                <form id="editSubLine-topic" method="POST">
+                <form id="addSubLine" method="POST">
                     @csrf
                     <div class="card-body">
-                        <div class="form-group">
-                            <label for="InputSubLineName">Nombre</label>
-                            <input type="text" class="form-control col-6" name="subLineName" id="InputSubLineName" placeholder="Nombre de la Linea. Ej: Aplicaciones Web" value="{{ $subline_topic[0]->name }}">
+                        <div class="row gx-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="subLineName">Nombre</label>
+                                <input class="form-control" id="InputSubLineName" type="text" name="subLineName" placeholder="Nombre de la Linea. Ej: Aplicaciones Web" value="{{ $subline[0]->name }}">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Linea</label>
-                            <select class="custom-select rounded-0" name="selectLine" id="SelectSubLine">
-                                <option>Seleccione una Opcion</option>   
-                                @foreach ($allLines as $line)
-                                    <option @php echo $subline_topic[0]->subline==$line->id?'selected':''; @endphp value="{{ $line->id }}">{{ $line->name }}</option>   
-                                @endforeach         
-                            </select>
+                        <div class="row gx-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="selectLine">Linea</label>
+                                <select class="custom-select rounded-0" name="selectLine" id="SelectSubLine">
+                                    <option>Seleccione una Opcion</option>   
+                                    @foreach ($allLines as $line)
+                                        <option  @php echo $subline[0]->line==$line->id?'selected':''; @endphp value="{{ $line->id }}">{{ $line->name }}</option>   
+                                    @endforeach         
+                                </select>
+                            </div>
                         </div>
+                        <input type="hidden" name="subLineId" id="subLineId" value="{{ $subline[0]->id }}">
 
-                    </div>
-                    <input type="hidden" name="subLineId" id="subLineId" value="{{ $subline_topic[0]->id }}">
+                        <button class="btn btn-primary" type="Submit">Confirmar</button>
                     </div>
 
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-success">Confirmar</button>
-                    </div>
+            </div>
+
                 </form>
             </div> 
         </div>
     </div>  
+</div>
 @stop
 
 {{-- Push extra CSS --}}
@@ -60,15 +65,15 @@
 @push('js')
     <script>
 
-        $('#editSubLine-topic').on('submit', function(event) {
+        $('#addSubLine').on('submit', function(event) {
 
             event.preventDefault();
 
-            var Id = $('#subLineId').val();
+            let Id = $('#subLineId').val();
             let formData = new FormData(this);
 
             $.ajax({
-                url: "{{ url('/admin/update-subline-topic') }}" + "/" + Id,
+                url: "{{ url('/admin/update-subline') }}" + "/" + Id,
                 type: "POST",
                 data: formData,
                 contentType: false,
@@ -79,7 +84,7 @@
                         alert(response.Message);
                     } else if (response.isSuccess == true) {
 
-                        Swal.fire("Actualizado", "Se ha editado la Sub Linea de Investigacion.", "success");
+                        Swal.fire("Actualizado", response.Message, "success");
 
                         setTimeout(function() {
                             window.location.reload();

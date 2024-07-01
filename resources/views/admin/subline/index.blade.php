@@ -3,50 +3,50 @@
 {{-- Customize layout sections --}}
 
 @section('subtitle', 'Welcome')
-@section('content_header_title', 'Home')
-@section('content_header_subtitle', 'Sub-Linea')
+
 
 {{-- Content body: main page content --}}
 
 @section('content_body')
-    <p>Listado de Sub Lineas de Investigacion</p>
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    <a href="/admin/subline/add" class="btn btn-outline-success float-right">Agregar</a>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-nowrap table-hover mb-0">
-                            <thead>
-                                <tr>
-                                    <th scope="col">ID</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Linea</th>
-                                    <th scope="col">Acciones</th>
-                                    
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($allSlines as $sLines)
-                                <tr>
-                                    <th scope="row">{{ $sLines->id }}</th>
-                                    <td>{{ $sLines->name }}</td>
-                                    <td>{{ $sLines->sName }}</td>
-                                    <td>
-                                        <a href="/admin/subline/edit/{{ $sLines->id }}"  class="btn btn-info  btn-sm"><i class="fa fa-edit"></i></a>
-                                        <a data-id="{{ $sLines->id }}" class="btn btn-danger btn-sm delConfirmButton"><i class="fa fa-trash"></i></a>  
-                                    </td>
-                                </tr>
-                                @endforeach 
-                            </tbody>
-                        </table>
+    <div class="p-4">
+        <div class="h3 mb-0 text-gray-dark"><h3>Listado de Sub Lineas de Investigacion</h3></div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <a href="/admin/subline/add" class="btn btn-outline-primary float-right">Agregar</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover col-lg-12 text-center">
+                                <thead class="thead-blue">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Linea de Investigacion</th>
+                                        <th scope="col">Acciones</th>    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($sublines as $subLine)
+                                    <tr>
+                                        <th scope="row">{{ $subLine->id }}</th>
+                                        <td>{{ $subLine->name }}</td>
+                                        <td>{{ $subLine->lName }}</td>
+                                        <td>
+                                            <a href="/admin/subline/edit/{{ $subLine->id }}"  class="btn btn-info  btn-sm"><i class="fa fa-edit"></i></a>
+                                            <a data-id="{{ $subLine->id }}" class="btn btn-danger btn-sm delConfirmButton"><i class="fa fa-trash"></i></a>  
+                                        </td>
+                                    </tr>
+                                    @endforeach 
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>  
+    </div>
 @stop
 
 {{-- Push extra CSS --}}
@@ -81,7 +81,7 @@
             if (result.value) {
 
                 $.ajax({
-                    url: "{{ url('/admin/deleteSubLine-topic') }}" + "/" + ID,
+                    url: "{{ url('/admin/delete-subline') }}" + "/" + ID,
                     type: "GET",
                     success: function(response) {
 
@@ -89,7 +89,7 @@
                             alert(response.Message);
                         } else if (response.isSuccess == true) {
 
-                            Swal.fire("Borrado", "Se ha Borrado el elemento.", "success");
+                            Swal.fire("Borrado", response.Message, "success");
 
                             setTimeout(function() {
                                 window.location.reload();
@@ -98,7 +98,7 @@
                         }
 
                     },
-                    error: function(response) {
+                    error: function(response, exception, message) {
                         
                         Swal.fire("Ha ocurrido un error", response.message, "error");
 
