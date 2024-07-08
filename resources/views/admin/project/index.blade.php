@@ -18,7 +18,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-hover col-lg-12 text-center">
+                            <table class="table table-hover col-lg-12 text-center" id="projectTable">
                                 <thead class="thead-blue">
                                     <tr>
                                         <th scope="col">ID</th>
@@ -58,12 +58,19 @@
 @push('css')
     {{-- Add here extra stylesheets --}}
     {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
+
+
 @endpush
 
 {{-- Push extra scripts --}}
 
 @push('js')
-    <script> 
+
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+
+    <script type="text/javascript"> 
 
         $('.delConfirmButton').click(function (event) {
 
@@ -114,6 +121,24 @@
           });
 
         }); //Parameter
+
+        $('#projectTable').DataTable({
+            language: {
+                        "lengthMenu": "Mostrar _MENU_ registros por pagina",
+                        "zeroRecords": "Nada encontrado - disculpa",
+                        "info": "Mostrando pagina _PAGE_ de _PAGES_",
+                        "infoEmpty": "No hay datos disponible",
+                        "infoFiltered": "(Filtrado de _MAX_ registros totales)",
+                        "search": "Busqueda: ",
+                        "paginate": {
+                            "first":      "Primera",
+                            "last":       "Ultima",
+                            "next":       "Siguiente",
+                            "previous":   "Anterior"
+                        }
+                    }
+
+        });
 
     </script>
 @endpush

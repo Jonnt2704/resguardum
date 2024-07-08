@@ -31,12 +31,6 @@
     @yield('content_body')
 @stop
 
-@section('css')
-    
-
-
-@stop
-
 {{-- Create a common footer --}}
 
 @section('footer')
@@ -71,8 +65,6 @@
 @push('css')
 
 <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.1/dist/sweetalert2.min.css" rel="stylesheet">
-
-
 
 <style type="text/css">
 

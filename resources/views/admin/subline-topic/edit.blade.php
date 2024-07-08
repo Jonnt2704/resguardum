@@ -39,7 +39,7 @@
                                 </select>
                             </div>
                         </div>
-                        <button class="btn btn-primary" type="Submit">Guardar</button>
+                        <button class="btn btn-primary" type="Submit">Confirmar</button>
                     </div>
                     <input type="hidden" name="subLineId" id="subLineId" value="{{ $subline_topic[0]->id }}">
 

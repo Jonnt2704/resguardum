@@ -10,6 +10,7 @@
 
 @section('content_body')
     <p>Bienvenido al Panel de Administracion del Repositorio de la Universidad de Margarita.</p>
+  
 @stop
 
 {{-- Push extra CSS --}}

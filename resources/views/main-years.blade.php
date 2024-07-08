@@ -83,8 +83,8 @@
             </div>
             <div class="col-sm-4 col-12 header-user">
                                 <div class="text-right text-truncate mx-2 header-user-button">
-                                                    <a href="https://portalunimar.unimar.edu.ve/login" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Inicia Sesión" target="_self" style="text-decoration: none;">
-                                <span style="font-size: 12px;">inicia sesión</span>
+                                                    <a href="/login" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Inicia Sesión" target="_self" style="text-decoration: none;">
+                                <span style="font-size: 12px;">INGRESAR</span>
                                 <img src="https://portalunimar.unimar.edu.ve/./image/login.png" style="width: 25px; margin-left: 3px;">
                             </a>
                                             </div>
@@ -252,7 +252,7 @@
                             <div class="col-md-4">
                                 <div class="post-media">
                                     <a href="/single/project/{{ $project->id }}" title="project-img-{{ $project->id }}">
-                                        <img src="{{asset('assets/img/Biblio-03.png')}}" class="img-fluid" width="90%">
+                                        <img src="{{asset('assets/img/Biblio-10_x.jpg')}}" class="img-fluid border" width="50%">
                                         <div class="hovereffect"></div>
                                     </a>
                                 </div>

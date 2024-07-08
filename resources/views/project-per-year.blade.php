@@ -89,8 +89,8 @@
             </div>
             <div class="col-sm-4 col-12 header-user">
                                 <div class="text-right text-truncate mx-2 header-user-button">
-                                                    <a href="https://portalunimar.unimar.edu.ve/login" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Inicia Sesión" target="_self" style="text-decoration: none;">
-                                <span style="font-size: 12px;">inicia sesión</span>
+                                                    <a href="/login" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Inicia Sesión" target="_self" style="text-decoration: none;">
+                                <span style="font-size: 12px;">INGRESAR</span>
                                 <img src="https://portalunimar.unimar.edu.ve/./image/login.png" style="width: 25px; margin-left: 3px;">
                             </a>
                                             </div>
@@ -240,7 +240,7 @@
                 <img id="img-section" src="https://portalunimar.unimar.edu.ve/./image/views/es/newstudents/newstudents-09.png"><h4>Tesis de Grado por Año de Publicacion</h4>
             </div>
         </div>
-           
+ 
         <div class="justify-content-around row">
            @foreach ($years as $projectYear) 
            <div class="col-sm-4 col-md-3 my-2 text-center" aria-expanded="false" >

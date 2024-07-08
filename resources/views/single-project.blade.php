@@ -89,8 +89,8 @@
             </div>
             <div class="col-sm-4 col-12 header-user">
                                 <div class="text-right text-truncate mx-2 header-user-button">
-                                                    <a href="https://portalunimar.unimar.edu.ve/login" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Inicia Sesión" target="_self" style="text-decoration: none;">
-                                <span style="font-size: 12px;">inicia sesión</span>
+                                                    <a href="/login" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Inicia Sesión" target="_self" style="text-decoration: none;">
+                                <span style="font-size: 12px;">INGRESAR</span>
                                 <img src="https://portalunimar.unimar.edu.ve/./image/login.png" style="width: 25px; margin-left: 3px;">
                             </a>
                                             </div>
@@ -255,7 +255,7 @@
                     <div class="card border-0 m-4">
                         <div class="row no-gutters">
                             <div class="col-md-4">
-                                <img class="rounded" src="{{asset('assets/img/Biblio-06.jpg')}}" alt="tesis-unimar">
+                                <img class="rounded img-fluid" src="{{asset('assets/img/Biblio-06.jpg')}}" alt="tesis-unimar">
                                 <p class="card-text fs-6 font-weight-bold pt-4 text-start" style="padding-left: 20px;">Fecha de Publicacion:</p>
                                 <h3 class="card-title fs-6 mb-4 mt-1 text-start" style="padding-left: 20px;">@php echo $year; @endphp</h3>
                                 <p class="card-text fs-6 font-weight-bold pt-4 text-start" style="padding-left: 20px;">Descargar</p>

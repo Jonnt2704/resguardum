@@ -30,7 +30,7 @@
                         </div>
                         <input type="hidden" name="LineId" id="LineId" value="{{ $line->id }}">
 
-                        <button class="btn btn-primary" type="Submit">Guardar</button>
+                        <button class="btn btn-primary" type="Submit">Confirmar</button>
                     </div>
 
             </div>

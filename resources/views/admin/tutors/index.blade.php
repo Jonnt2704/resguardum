@@ -18,7 +18,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-hover col-lg-12 text-center">
+                            <table class="table table-hover col-lg-12 text-center" id="tutorTable">
                                 <thead class="thead-blue">
                                     <tr>
                                         <th scope="col">ID</th>
@@ -35,8 +35,8 @@
                                         <th scope="row">{{ $tutor->id }}</th>
                                         <td>{{ $tutor->name }}</td>
                                         <td>{{ $tutor->lastname }}</td>
-                                        <td>{{ $tutor->phone }}</td>
-                                        <td>{{ $tutor->email }}</td>
+                                        <td>@php echo $tutor->phone==""?'n/a':$tutor->phone; @endphp</td>
+                                        <td>@php echo $tutor->email==""?'n/a':$tutor->email; @endphp</td>
                                         <td>
                                             <a href="/admin/tutor/edit/{{ $tutor->id }}"  class="btn btn-info  btn-sm"><i class="fa fa-edit"></i></a>
                                             <a data-id="{{ $tutor->id }}" class="btn btn-danger btn-sm delConfirmButton"><i class="fa fa-trash"></i></a>  
@@ -58,11 +58,17 @@
 @push('css')
     {{-- Add here extra stylesheets --}}
     {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
+
 @endpush
 
 {{-- Push extra scripts --}}
 
 @push('js')
+
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+
     <script> 
 
         $('.delConfirmButton').click(function (event) {
@@ -114,6 +120,24 @@
           });
 
         }); //Parameter
+
+        $('#tutorTable').DataTable({
+            language: {
+                        "lengthMenu": "Mostrar _MENU_ registros por pagina",
+                        "zeroRecords": "Nada encontrado - disculpa",
+                        "info": "Mostrando pagina _PAGE_ de _PAGES_",
+                        "infoEmpty": "No hay datos disponible",
+                        "infoFiltered": "(Filtrado de _MAX_ registros totales)",
+                        "search": "Busqueda: ",
+                        "paginate": {
+                            "first":      "Primera",
+                            "last":       "Ultima",
+                            "next":       "Siguiente",
+                            "previous":   "Anterior"
+                        }
+                    }
+
+        });
 
     </script>
 @endpush

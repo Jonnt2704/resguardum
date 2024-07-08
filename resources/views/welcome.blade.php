@@ -34,6 +34,8 @@
 
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
+        <link rel="stylesheet" href="{{asset('css/slick-theme.css')}}">
+
         <!-- Page Styles -->
                 <!-- MDB -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet"/>
@@ -46,8 +48,6 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-
-        
 
     </head>
     <body>
@@ -89,8 +89,8 @@
             </div>
             <div class="col-sm-4 col-12 header-user">
                                 <div class="text-right text-truncate mx-2 header-user-button">
-                                                    <a href="https://portalunimar.unimar.edu.ve/login" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Inicia Sesión" target="_self" style="text-decoration: none;">
-                                <span style="font-size: 12px;">inicia sesión</span>
+                                                    <a href="/login" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ingresar" target="_self" style="text-decoration: none;">
+                                <span style="font-size: 12px;">INGRESAR</span>
                                 <img src="https://portalunimar.unimar.edu.ve/./image/login.png" style="width: 25px; margin-left: 3px;">
                             </a>
                                             </div>
@@ -112,7 +112,7 @@
                 <div class="navbar-nav mr-auto">
                     <!-- Home -->
                     <li class="nav-item px-1 active">
-                        <a class="nav-link text-dark" href="https://portalunimar.unimar.edu.ve/home">Inicio
+                        <a class="nav-link text-dark" href="/">Inicio
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
@@ -268,25 +268,31 @@
         <!-- Dropdown Buttons -->
         <div class="d-inline-flex justify-content-around m-4 content-vext">
             <div class="row justify-content-around">
-                <!-- Undergraduate -->
-                <div class="col-md-4 col-sm-4 my-2" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">
-                    <a class="campusbtn">
+
+                <div class="col-md-3 col-sm-3 my-2" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">
+                    <a class="campusbtn" href="/project-per-autor">
                         <img src="{{asset('assets/img/Biblio-08_x.jpg')}}" style="border-radius: 20px;" width="80%">
                     </a>
                 </div>
-                <!-- Postgraduate -->
-                <div class="col-md-4 col-sm-4 my-2" data-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapse2">
+    
+                <div class="col-md-3 col-sm-3 my-2" data-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapse2">
                     <a class="campusbtn" href="/main">
                         <img src="{{asset('assets/img/Biblio-04_x.jpg')}}" style="border-radius: 20px;" width="80%">
                     </a>
                 </div>
-                <!-- Certified -->
-                <div class="col-md-4 col-sm-4 my-2" data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapse3">
+
+                <div class="col-md-3 col-sm-3 my-2" data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapse3">
                     <a class="campusbtn" href="/project-per-year">
                         <img src="{{asset('assets/img/Biblio-09_x.jpg')}}" style="border-radius: 20px;" width="80%">
                     </a>
                 </div>
-                <!-- Courses -->
+
+                <div class="col-md-3 col-sm-3 my-2" data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapse3">
+                    <a class="campusbtn" href="/project-per-tutor">
+                        <img src="{{asset('assets/img/Biblio-12_x.jpg')}}" style="border-radius: 20px;" width="80%">
+                    </a>
+                </div>
+
             </div>
         </div>
 
@@ -306,7 +312,7 @@
                         $year = strftime("%Y", $fecha);
 
                         @endphp
-                        <div class="my-2 px-5" >
+                        <div class="my-2" >
                             <div class="card" style="width: 18rem;">
                               <img src="{{asset('assets/img/Biblio-06.jpg')}}" style="background-color: #e8e8e8;" class="card-img-top" alt="...">
                               <div class="card-body">
@@ -731,10 +737,10 @@
             
             $('.project-carrousel').slick({
               infinite: true,
-              slidesToShow: 3,
+              slidesToShow: 4,
               autoplay: true,
-              arrows: false,
-              slidesToScroll: 1
+              arrows: true,
+              slidesToScroll: 1,
           });
 
         </script>
