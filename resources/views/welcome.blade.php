@@ -34,6 +34,11 @@
 
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
+<<<<<<< HEAD
+=======
+        <link rel="stylesheet" href="{{asset('css/slick-theme.css')}}">
+
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
         <!-- Page Styles -->
                 <!-- MDB -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet"/>
@@ -47,8 +52,11 @@
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
+<<<<<<< HEAD
         
 
+=======
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
     </head>
     <body>
         <!-- Header -->
@@ -89,8 +97,8 @@
             </div>
             <div class="col-sm-4 col-12 header-user">
                                 <div class="text-right text-truncate mx-2 header-user-button">
-                                                    <a href="https://portalunimar.unimar.edu.ve/login" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Inicia Sesión" target="_self" style="text-decoration: none;">
-                                <span style="font-size: 12px;">inicia sesión</span>
+                                                    <a href="/login" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ingresar" target="_self" style="text-decoration: none;">
+                                <span style="font-size: 12px;">INGRESAR</span>
                                 <img src="https://portalunimar.unimar.edu.ve/./image/login.png" style="width: 25px; margin-left: 3px;">
                             </a>
                                             </div>
@@ -112,7 +120,7 @@
                 <div class="navbar-nav mr-auto">
                     <!-- Home -->
                     <li class="nav-item px-1 active">
-                        <a class="nav-link text-dark" href="https://portalunimar.unimar.edu.ve/home">Inicio
+                        <a class="nav-link text-dark" href="/">Inicio
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
@@ -268,6 +276,7 @@
         <!-- Dropdown Buttons -->
         <div class="d-inline-flex justify-content-around m-4 content-vext">
             <div class="row justify-content-around">
+<<<<<<< HEAD
                 <!-- Undergraduate -->
                 <div class="col-md-4 col-sm-4 my-2" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">
                     <a class="campusbtn">
@@ -276,16 +285,32 @@
                 </div>
                 <!-- Postgraduate -->
                 <div class="col-md-4 col-sm-4 my-2" data-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapse2">
+=======
+
+                <div class="col-md-3 col-sm-3 my-2" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">
+                    <a class="campusbtn" href="/project-per-autor">
+                        <img src="{{asset('assets/img/Biblio-08_x.jpg')}}" style="border-radius: 20px;" width="80%">
+                    </a>
+                </div>
+    
+                <div class="col-md-3 col-sm-3 my-2" data-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapse2">
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
                     <a class="campusbtn" href="/main">
                         <img src="{{asset('assets/img/Biblio-04_x.jpg')}}" style="border-radius: 20px;" width="80%">
                     </a>
                 </div>
+<<<<<<< HEAD
                 <!-- Certified -->
                 <div class="col-md-4 col-sm-4 my-2" data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapse3">
+=======
+
+                <div class="col-md-3 col-sm-3 my-2" data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapse3">
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
                     <a class="campusbtn" href="/project-per-year">
                         <img src="{{asset('assets/img/Biblio-09_x.jpg')}}" style="border-radius: 20px;" width="80%">
                     </a>
                 </div>
+<<<<<<< HEAD
                 <!-- Courses -->
             </div>
         </div>
@@ -319,6 +344,59 @@
                         </div>
                         @endforeach
                         
+=======
+
+                <div class="col-md-3 col-sm-3 my-2" data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapse3">
+                    <a class="campusbtn" href="/project-per-tutor">
+                        <img src="{{asset('assets/img/Biblio-12_x.jpg')}}" style="border-radius: 20px;" width="80%">
+                    </a>
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
+                </div>
+
+            </div>
+        </div>
+<<<<<<< HEAD
+        
+        <div class="section-content">
+            <div class="d-flex justify-content-start">
+                <img id="img-section" src="https://portalunimar.unimar.edu.ve/./image/views/es/investigation/Inv-06.png">
+                <h4>Consulta con la IA</h4>
+            </div>
+            <div class="card border-0 card-body sectionbody">
+                <p class="text-justify"> Usa la tecnologia de la IA (Inteligencia Artificial) para obtener ayuda para la propuesta de Titulo de tu tesis de grado. Con esta herramienta podras darle los parametros e ideas de tu proyecto y ella te ayudara a generar una propuesta de titulo para tu proyecto.</p>
+            </div>
+        </div>
+=======
+
+        <div class="section-content" style="15px auto">
+            <div class="d-flex justify-content-start">
+                <img id="img-section" src="https://portalunimar.unimar.edu.ve/image/views/es/home/home-03.png" width="100%"><h4>Agregados Recientemente</h4>
+            </div>
+        </div>
+
+        <div class="section-content m-4 content-vext">
+            <div class="container">
+                <div class="project-carrousel">
+                        @foreach ($projectInfo as $project)
+                        @php
+
+                        $fecha = strtotime($project->create_date);
+                        $year = strftime("%Y", $fecha);
+
+                        @endphp
+                        <div class="my-2" >
+                            <div class="card" style="width: 18rem;">
+                              <img src="{{asset('assets/img/Biblio-06.jpg')}}" style="background-color: #e8e8e8;" class="card-img-top" alt="...">
+                              <div class="card-body">
+                                <a class="text-dark text-decoration-none" href="/single/project/{{ $project->id }}"><p class="card-text text-capitalize" style="max-height: 110px; overflow: hidden;">{{ $project->title }}</p></a>
+                              </div>
+                              <div class="card-footer">
+                                <small class="text-muted fst-italic">{{ $project->name }} {{ $project->lastname }}</small> <small class="text-muted">(UNIMAR, @php echo $year; @endphp)</small>
+                              </div>
+                            </div>
+                        </div>
+                        @endforeach
+                        
                 </div>
             </div>
         </div>
@@ -332,6 +410,7 @@
                 <p class="text-justify"> Usa la tecnologia de la IA (Inteligencia Artificial) para obtener ayuda para la propuesta de Titulo de tu tesis de grado. Con esta herramienta podras darle los parametros e ideas de tu proyecto y ella te ayudara a generar una propuesta de titulo para tu proyecto.</p>
             </div>
         </div>
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
 
         <div class="d-inline-flex justify-content-around m-4 content-vext mb-5">
             <div class="row justify-content-around">
@@ -731,10 +810,17 @@
             
             $('.project-carrousel').slick({
               infinite: true,
+<<<<<<< HEAD
               slidesToShow: 3,
               autoplay: true,
               arrows: false,
               slidesToScroll: 1
+=======
+              slidesToShow: 4,
+              autoplay: true,
+              arrows: true,
+              slidesToScroll: 1,
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
           });
 
         </script>

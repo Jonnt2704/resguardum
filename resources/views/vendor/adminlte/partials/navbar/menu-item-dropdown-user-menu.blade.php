@@ -22,7 +22,11 @@
                  class="user-image img-circle elevation-2"
                  alt="{{ Auth::user()->name }}">
         @endif
+<<<<<<< HEAD
         <span @if(config('adminlte.usermenu_image')) class="d-none d-md-inline" @endif>
+=======
+        <span @if(config('adminlte.usermenu_image')) class="d-none d-md-inline" @endif style="color: white !important; font-weight: bold">
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
             {{ Auth::user()->name }}
         </span>
     </a>
@@ -64,7 +68,11 @@
         <li class="user-footer">
             @if($profile_url)
                 <a href="{{ $profile_url }}" class="nav-link btn btn-default btn-flat d-inline-block">
+<<<<<<< HEAD
                     <i class="fa fa-fw fa-user text-lightblue"></i>
+=======
+                    <i class="fa fa-fw fa-user text-white"></i>
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
                     {{ __('adminlte::menu.profile') }}
                 </a>
             @endif

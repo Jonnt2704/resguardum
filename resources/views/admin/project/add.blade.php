@@ -58,7 +58,11 @@
                                 </select>
                             </div>
                             <div class="col-md-4">
+<<<<<<< HEAD
                                 <label class="small mb-1" for="projectNote">Tema</label>
+=======
+                                <label class="small mb-1" for="projectNote">Linea de Investigacion</label>
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
                                 <select class="custom-select rounded-0" name="selectLine" id="SelectLine">
                                     <option>Seleccione una Opcion</option>   
                                     @foreach ($lines as $line)

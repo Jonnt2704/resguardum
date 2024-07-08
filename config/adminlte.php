@@ -198,7 +198,11 @@ return [
     'classes_content' => '',
     'classes_sidebar' => 'main-sidebar sidebar-light-primary elevation-4',
     'classes_sidebar_nav' => '',
+<<<<<<< HEAD
     'classes_topnav' => 'navbar-blue-u navbar-light',
+=======
+    'classes_topnav' => 'navbar-blue-u navbar-light text-white',
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 

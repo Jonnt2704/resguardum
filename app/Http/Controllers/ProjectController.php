@@ -112,9 +112,25 @@ class ProjectController extends Controller
      * @param  \App\project  $project
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function edit(project $project)
     {
         //
+=======
+    public function edit($id)
+    {
+        $project = DB::table('project')
+                        ->where('id', '=', $id)
+                        ->get();
+
+        $autors = DB::table('autor')->get();
+
+        $tutors = DB::table('tutor')->get();
+
+        $lines = DB::table('line')->get();
+
+        return view('admin.project.edit', compact('project', 'autors', 'tutors', 'lines'));
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
     }
 
     /**
@@ -126,7 +142,59 @@ class ProjectController extends Controller
      */
     public function update(Request $request, project $project)
     {
+<<<<<<< HEAD
         //
+=======
+        $date = date('Y', time());
+
+        $filesPath = storage_path('/projects/');
+        
+        if ($request->hasFile('projectFile')) { 
+
+            $projectPdf = $request->file('projectFile');
+            $projectName = $date . '_' . time() . '.' . $projectPdf->getClientOriginalExtension();
+            $projectPdf->move($filesPath, $projectName);
+            $projectSave = "/projects/" . $projectName;
+
+        } else {
+
+            if (isset($request->current_project_file)) {
+                $projectSave = $request->current_project_file;
+            } else {
+                $projectSave = NULL;
+            }
+
+        }
+
+        $updatedProject = DB::table('project')
+                    ->where('id', $request->projectId)
+                    ->update([
+                                'title' => $request->projectName,
+                                'autor' => $request->selectAutor,
+                                'line' => $request->selectLine,
+                                'tutor' => $request->selectTutor,
+                                'resume' => $request->projectResume,
+                                'note' => $request->projectNote,
+                                'path' => $projectSave,
+                                'create_date' => $request->projectCreatedDate,
+                        ]);
+
+        if ( $updatedProject ) {  
+
+            return response()->json([
+                'isSuccess' => true,
+                'Message' => "Se ha actualizado el Proyecto con exito!"
+            ], 200); // Status code here
+
+        } else {
+
+            return response()->json([
+                'isSuccess' => true,
+                'Message' => "Algo ha salido mal! Si el error persiste contacta a soporte"
+            ], 200); // Status code here
+
+        }
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
     }
 
     /**

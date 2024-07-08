@@ -72,8 +72,11 @@
 
 <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.1/dist/sweetalert2.min.css" rel="stylesheet">
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
 <style type="text/css">
 
     {{-- You can add AdminLTE customizations here --}}

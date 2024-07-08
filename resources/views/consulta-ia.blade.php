@@ -83,8 +83,13 @@
             </div>
             <div class="col-sm-4 col-12 header-user">
                                 <div class="text-right text-truncate mx-2 header-user-button">
+<<<<<<< HEAD
                                                     <a href="https://portalunimar.unimar.edu.ve/login" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Inicia Sesión" target="_self" style="text-decoration: none;">
                                 <span style="font-size: 12px;">inicia sesión</span>
+=======
+                                                    <a href="/login" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Inicia Sesión" target="_self" style="text-decoration: none;">
+                                <span style="font-size: 12px;">INGRESAR</span>
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
                                 <img src="https://portalunimar.unimar.edu.ve/./image/login.png" style="width: 25px; margin-left: 3px;">
                             </a>
                                             </div>
@@ -244,6 +249,7 @@
                 <div class="card-text font-weight-bold">
                     <h5 id="name-funders">TU PROPUESTA DE TITULO</h5>
                 </div>
+<<<<<<< HEAD
                 <div class="row ml-4 ">
                     <div class="form-group col-8">
                         <label for="document_id"><b>Describe tu proyecto:</b></label>
@@ -257,6 +263,43 @@
                         <button type="submit" class="btn btn-primary" id="generateBtn">Generar</button>
                     </div>
 
+=======
+                
+                <div class="row ml-4 ">
+                    <div class="form-group col-3">
+                        <label for="document_id"><b>Titulo de Tipo:</b></label>
+                        <select class="form-control" name="titleType" id="titleType">
+                            <option value="creativo">CREATIVO</option>
+                            <option value="llamativo">LLAMATIVO</option>
+                            <option value="ibjetivo">OBJETIVO</option>
+                            <option value="conciso">CONCISO</option>
+                            <option value="profesional">PROFESIONAL</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-3">
+                        <label for="document_id"><b>Linea de Investigacion:</b></label>
+                        <select class="form-control" name="titleLine" id="titleLine"> 
+                            @foreach ($lines as $line)
+                                <option value="{{ $line->name }}">{{ $line->name }}</option>   
+                            @endforeach 
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row ml-4 ">
+                    <div class="form-group col-9">
+                        <label for="document_id"><b>Describe tu proyecto:</b></label>
+                        <input type="text" class="form-control" id="project-description">
+                    </div>
+                    
+                </div>
+                
+                <div class="form-group col-10">
+                    <button type="submit" class="btn btn-primary" id="generateBtn">Generar</button>
+                </div>
+                <div class="form-group col-2">
+                       <div class="loader d-none" id="loader" style="padding-top: 35px;"></div>
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
                 </div>
             </div>
 
@@ -654,14 +697,29 @@
             const API_KEY = 'AIzaSyAcPEJ67blERhqpi3VzuNu4LVZMsFbZF84';
             const genAI = new GoogleGenerativeAI(API_KEY);
             var load = document.getElementById('loader');
+<<<<<<< HEAD
+=======
+            var tipo = $('#titleType').val();
+            var longitud = $('#titleLength').val();
+            var linea = $('#titleLine').val();
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
             
 
             document.getElementById('generateBtn').addEventListener('click', async () => {
 
                 load.classList.remove('d-none');
 
+<<<<<<< HEAD
                 const inputText = document.getElementById('project-description').value;
                 const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro-latest"});
+=======
+                var inputText = "Escribir un título para una tesis de grado que comience por la palabra Desarrollo, propuesta o diseño que sea " + tipo;
+                inputText += ' con un máximo de 30 palabras y un minimo de 15. El título debe reflejar el tema de ' + linea + ', ademas ';
+                inputText += document.getElementById('project-description').value;
+
+                const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro-latest"});
+
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
                 const prompt = inputText;
 
                 try {

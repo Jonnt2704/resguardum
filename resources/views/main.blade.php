@@ -83,8 +83,13 @@
             </div>
             <div class="col-sm-4 col-12 header-user">
                                 <div class="text-right text-truncate mx-2 header-user-button">
+<<<<<<< HEAD
                                                     <a href="https://portalunimar.unimar.edu.ve/login" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Inicia Sesión" target="_self" style="text-decoration: none;">
                                 <span style="font-size: 12px;">inicia sesión</span>
+=======
+                                                    <a href="/login" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Inicia Sesión" target="_self" style="text-decoration: none;">
+                                <span style="font-size: 12px;">INGRESAR</span>
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
                                 <img src="https://portalunimar.unimar.edu.ve/./image/login.png" style="width: 25px; margin-left: 3px;">
                             </a>
                                             </div>
@@ -239,7 +244,11 @@
         <section class="section pb-5">
             <div class="container">
                 <div class="row">
+<<<<<<< HEAD
                     <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+=======
+                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 border-end" id="mainResult">
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
                         <div class="page-wrapper">
                             <div class="blog-top clearfix" style="margin-top:2rem; margin-bottom: 2rem;">
                                 <h4 style="float: left;">Proyectos Recientes <a href=""><i class="fa fa-list"></i></a></h4>
@@ -252,7 +261,11 @@
                             <div class="col-md-4">
                                 <div class="post-media">
                                     <a href="/single/project/{{ $project->id }}" title="project-img-{{ $project->id }}">
+<<<<<<< HEAD
                                         <img src="{{asset('assets/img/Biblio-03.png')}}" class="img-fluid" width="90%">
+=======
+                                        <img src="{{asset('assets/img/Biblio-10_x.jpg')}}" class="img-fluid border" width="50%">
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
                                         <div class="hovereffect"></div>
                                     </a>
                                 </div>
@@ -266,6 +279,71 @@
                         </div>
                         @endforeach
                     </div>
+<<<<<<< HEAD
+=======
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-wrapper">
+                            <div class="blog-top clearfix" style="margin-top:1rem; margin-bottom: 2rem;">
+                                <h6 >Busqueda: <a href=""></a></h6>
+                            </div>
+                        </div>
+                        <form id="searchProject" method="POST">
+                            <div class="row">
+                                
+                                    @csrf
+                                    <div class="col-md-9">
+                                        <input class="form-control form-control-sm" type="text" placeholder="Busqueda..." aria-label=".form-control-sm example" name="busqueda">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button id="findProject" type="submit" class="btn btn-sm btn-primary mb-3">Buscar</button>
+                                    </div>
+                                
+                            </div>
+                        </form>
+                        <hr>
+                        <div class="page-wrapper">
+                            <div class="blog-top clearfix" style="margin-top:1rem; margin-bottom: 2rem;">
+                                <h6 >Filtros: <a href=""></a></h6>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <span class="float-right">Orden Alfabetico:</span>
+                            <div class="" role="group" aria-label="Basic radio toggle button group">
+                              
+                              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+                              <label class="btn btn-sm btn-outline-primary" for="btnradio1">Asc</label>
+
+                              <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                              <label class="btn btn-sm btn-outline-primary" for="btnradio2">Desc</label>
+                            </div>
+
+                            <span class="float-right">Año:</span>
+                            <div class="" role="group" aria-label="Basic radio toggle button group">
+                              
+                              <input type="radio" class="btn-check" name="btnradioY" id="btnradioY1" autocomplete="off">
+                              <label class="btn btn-sm btn-outline-primary" for="btnradioY1">2021</label>
+
+                              <input type="radio" class="btn-check" name="btnradioY" id="btnradioY2" autocomplete="off">
+                              <label class="btn btn-sm btn-outline-primary" for="btnradioY2">2022</label>
+
+                              <input type="radio" class="btn-check" name="btnradioY" id="btnradioY3" autocomplete="off">
+                              <label class="btn btn-sm btn-outline-primary" for="btnradioY3">2023</label>
+
+                              <input type="radio" class="btn-check" name="btnradioY" id="btnradioY4" autocomplete="off">
+                              <label class="btn btn-sm btn-outline-primary" for="btnradioY4">2024</label>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="" role="group" aria-label="Basic radio toggle button group"> 
+                              <button type="button" class="btn btn-sm btn-outline-primary">Aplicar</button>
+                            </div>
+                        </div>
+                          
+                    </div>
+                        
+                    </div>
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
                 </div>
                 {{ $projectList->links() }}
             </div>
@@ -640,6 +718,40 @@
         <!-- /.footer -->
 
         <!-- Page Scripts -->
+<<<<<<< HEAD
+=======
+        <script type="text/javascript">
+
+
+
+
+            $('#searchProject').on('submit', function(event) {
+
+                event.preventDefault();
+
+                let formData = new FormData(this);
+
+                $.ajax({
+                    url: "{{ url('/search-project') }}",
+                    type: "POST",
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+
+                        $("#mainResult").html(response);
+
+                    },
+                    error: function(response, exception, message) {
+                        
+                        alert("Ha ocurrido un error", message, "error");
+
+                    }
+                });
+            });
+
+        </script>
+>>>>>>> ce1107b17ac5d14b0768d5e33b44443823d01e4a
             </body>
 </html>
 
