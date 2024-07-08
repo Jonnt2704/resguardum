@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Resguardum',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,8 +63,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<img class="portal-title" src="vendor/adminlte/dist/img/texto-unimar.jpg">',
+    'logo_img' => 'vendor/adminlte/dist/img/logo-unimar-127.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -86,7 +86,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/logo-unimar-127.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -113,7 +113,7 @@ return [
         'enabled' => true,
         'mode' => 'fullscreen',
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/logo-unimar-127.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -196,9 +196,9 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'main-sidebar sidebar-light-primary elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
+    'classes_topnav' => 'navbar-blue-u navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -306,56 +306,61 @@ return [
 
         [
             'text' => 'Inicio',
-            'url' => 'admin/pages',
+            'url' => '/admin',
             'icon' => 'fas fa-fw fa-house',
         ],
         ['header' => 'OPCIONES'],
         [
             'text' => 'Usuarios',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'url' => 'admin/users/index',
+            'icon' => 'fas fa-fw fa-users',
         ],
         [
             'text' => 'Proyectos',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'url' => 'admin/project/index',
+            'icon' => 'fas fa-fw fa-book',
         ],
 
         [
-            'text' => 'Trabajos',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Autores',
+            'url' => 'admin/autor/index',
+            'icon' => 'fas fa-fw fa-address-book',
+        ],
+
+        [
+            'text' => 'Tutores',
+            'url' => 'admin/tutor/index',
+            'icon' => 'fas fa-fw fa-user-tie',
         ],
 
         [
             'text' => 'Temas',
-            'icon' => 'fas fa-fw fa-share',
+            'icon' => 'fas fa-fw fa-book-atlas',
             'submenu' => [
                 [
                     'text' => 'Lineas Investigacion',
-                    'url' => '#',
+                    'url' => 'admin/lines/index',
                 ],
                 [
-                    'text' => 'Sublinea',
-                    'url' => 'admin/subline/index',
+                    'text' => 'Sub lineas',
+                    'url' => 'admin/subline-topic/index',
+                    'submenu' => [
+                            [
+                                'text' => 'Sub Linea',
+                                'url' => 'admin/subline/index',
+                                'icon_color' => 'blue'
+                            ],
+                            [
+                                'text' => 'Temas de Sub Linea',
+                                'url' => 'admin/subline-topic/index',
+                                'icon_color' => 'blue'
+                            ],
+                        ]
                 ],
+
             ],
         ],
-        [
-            'text' => 'Autores',
-            'icon_color' => 'red',
-            'url' => '#',
-        ],
-        [
-            'text' => 'Tutores',
-            'icon_color' => 'yellow',
-            'url' => '#',
-        ],
-        [
-            'text' => 'Ajustes',
-            'icon_color' => 'cyan',
-            'url' => '#',
-        ],
+
     ],
 
     /*

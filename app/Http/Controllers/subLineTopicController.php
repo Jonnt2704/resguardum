@@ -14,9 +14,12 @@ class subLineTopicController extends Controller
      */
     public function index()
     {
-        $allSlines = DB::table('subline_topic')->get();
+        $allSlines = DB::table('subline_topic')
+                ->join('subline', 'subline.id', '=', 'subline_topic.subline')
+                ->select('subline_topic.*', 'subline.name as sName')
+                ->get();
 
-        return view('admin.subline.index', compact('allSlines'));
+        return view('admin.subline-topic.index', compact('allSlines'));
 
     }
 
@@ -38,7 +41,28 @@ class subLineTopicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+        $url = DB::table('subline_topic')->insert([
+                'name' => $request->subLineName,
+                'subline' => $request->selectLine,
+            ]);
+
+        if ( $url ) {
+
+            return response()->json([
+                'isSuccess' => true,
+                'Message' => "Tema creado con exito!"
+            ], 200); // Status code here
+
+        } else {
+
+            return response()->json([
+                'isSuccess' => true,
+                'Message' => "Algo ha salido mal! Si el error persiste contacta a soporte"
+            ], 200); // Status code here
+
+        }
+  
     }
 
     /**
@@ -62,7 +86,7 @@ class subLineTopicController extends Controller
     {
         $allLines = DB::table('subline')->get();
 
-        return view('admin.subline.add', compact('allLines'));  
+        return view('admin.subline-topic.add', compact('allLines'));  
     }
 
     /**
@@ -73,7 +97,15 @@ class subLineTopicController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        $subline_topic = DB::table('subline_topic')
+                        ->where('id', '=', $id)
+                        ->get();
+
+        $allLines = DB::table('subline')->get();
+
+        return view('admin.subline-topic.edit', compact('subline_topic', 'allLines'));  
+
     }
 
     /**
@@ -85,7 +117,31 @@ class subLineTopicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $update = DB::table('subline_topic')
+                    ->where('id', $request->subLineId)
+                    ->update([
+                            'name' => $request->subLineName,
+                            'subline' => $request->selectLine,
+                        ]);
+
+        if ( $update ) {
+
+            return response()->json([
+                'isSuccess' => true,
+                'Message' => "Tema actualizado con exito!"
+            ], 200); // Status code here
+
+        } else {
+
+            return response()->json([
+                'isSuccess' => true,
+                'Message' => "Algo ha salido mal! Si el error persiste contacta a soporte"
+            ], 200); // Status code here
+
+        }
+
+
     }
 
     /**
@@ -96,6 +152,24 @@ class subLineTopicController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $deleted = DB::table('subline_topic')->where('id', '=', $id)->delete();
+
+        if ( $deleted ) {
+ 
+            return response()->json([
+                'isSuccess' => true,
+                'Message' => "Sub Linea borrada con exito!"
+            ], 200); // Status code here
+
+        } else {
+
+            return response()->json([
+                'isSuccess' => true,
+                'Message' => "Algo ha salido mal! Si el error persiste contacta a soporte"
+            ], 200); // Status code here
+
+        }
+
     }
 }
